@@ -76,7 +76,7 @@
                                 &nbsp;
                             <div class="dropdown">
                                 <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-user"></i>&nbsp;Test
+                                    <i class="fa fa-user"></i>&nbsp;
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/GUI/SignUpGUI.aspx"><i class="fa fa-user"></i>&nbsp;Your Info</asp:HyperLink>

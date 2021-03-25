@@ -55,16 +55,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ASSETS\IMG\cham-soc-cho-meo-banner.jpg" />
+    <Content Include="ASSETS\IMG\person-icon.png" />
     <Content Include="ASSETS\IMG\pet-shop-sai-gon-1.jpg" />
     <Content Include="ASSETS\IMG\pet-shop-sai-gon-2.jpg" />
     <Content Include="ASSETS\IMG\pet-shop-sai-gon-3.jpg" />
     <Content Include="ASSETS\IMG\pet-shop-sai-gon-4.jpg" />
-    <Content Include="ASSETS\IMG\signin-image.jpg" />
-    <Content Include="ASSETS\IMG\signup-image.jpg" />
     <Content Include="ASSETS\IMG\suc-khoe-cho-meo-banner.jpg" />
     <Content Include="ASSETS\IMG\thuc-an-cho-cho-banner.jpg" />
     <Content Include="ASSETS\IMG\thuc-an-cho-meo-banner.jpg" />
+    <Content Include="GUI\OrderManagementGUI.aspx" />
+    <Content Include="GUI\ContactManagementGUI.aspx" />
+    <Content Include="GUI\ProductManagementGUI.aspx" />
     <Content Include="GUI\Site.Master" />
+    <Content Include="GUI\Admin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -100,12 +103,26 @@
     <Compile Include="GUI\AboutGUI.aspx.designer.cs">
       <DependentUpon>AboutGUI.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OrderManagementGUI.aspx.cs">
+      <DependentUpon>OrderManagementGUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\OrderManagementGUI.aspx.designer.cs">
+      <DependentUpon>OrderManagementGUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\ContactGUI.aspx.cs">
       <DependentUpon>ContactGUI.aspx</DependentUpon>
@@ -114,12 +131,26 @@
     <Compile Include="GUI\ContactGUI.aspx.designer.cs">
       <DependentUpon>ContactGUI.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ContactManagementGUI.aspx.cs">
+      <DependentUpon>ContactManagementGUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\ContactManagementGUI.aspx.designer.cs">
+      <DependentUpon>ContactManagementGUI.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\HomeGUI.aspx.cs">
       <DependentUpon>HomeGUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\HomeGUI.aspx.designer.cs">
       <DependentUpon>HomeGUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProductManagementGUI.aspx.cs">
+      <DependentUpon>ProductManagementGUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductManagementGUI.aspx.designer.cs">
+      <DependentUpon>ProductManagementGUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\ShopGUI.aspx.cs">
       <DependentUpon>ShopGUI.aspx</DependentUpon>
