@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" CodeBehind="SignInGUI.aspx.cs" Inherits="PRN292_Project.GUI.SignInGUI" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Sign In | Pet Shop</title>
+    <title>Sign In | Pet Store</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container py-3">
@@ -22,7 +22,7 @@
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtPassword" TextMode="Password"></asp:TextBox>
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txtPassword" ErrorMessage="Password Required!" SetFocusOnError="True"></asp:RequiredFieldValidator>
                         </div>
-                        <asp:CheckBox runat="server" ID="RememberMe" Text="&nbsp;Remember Me"/>
+                        <asp:CheckBox runat="server" ID="RememberMe" Text="&nbsp;Remember Me" />
                     </div>
                     <div class="card-footer">
                         <asp:Button ID="btnSignIn" runat="server" Text="Sign In" CssClass="btn btn-primary btn-lg" />

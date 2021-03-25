@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" CodeBehind="SignUpGUI.aspx.cs" Inherits="PRN292_Project.GUI.SignUpGUI" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Sign Up | Pet Shop</title>
+    <title>Sign Up | Pet Store</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container py-3">
-        <div class="row d-flex justify-content-center">
+        <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
@@ -84,13 +84,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" CssClass="btn btn-primary btn-lg" />
-                        <asp:HyperLink runat="server" NavigateUrl="HomeGUI.aspx" CssClass="btn btn-danger btn-lg" Text="Cancel"></asp:HyperLink>
-                        <hr class="my-3">
-                        <asp:Label runat="server" CssClass="text-center">Already Member?</asp:Label>
-                        <asp:HyperLink runat="server" CssClass="text-primary font-weight-bold" NavigateUrl="SignInGUI.aspx" Text="Sign In Now!"></asp:HyperLink>
-                    </div>
+                <div class="card-footer">
+                    <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" CssClass="btn btn-primary btn-lg" />
+                    <asp:HyperLink runat="server" NavigateUrl="HomeGUI.aspx" CssClass="btn btn-danger btn-lg" Text="Cancel"></asp:HyperLink>
+                    <hr class="my-3">
+                    <asp:Label runat="server" CssClass="text-center">Already Member?</asp:Label>
+                    <asp:HyperLink runat="server" CssClass="text-primary font-weight-bold" NavigateUrl="SignInGUI.aspx" Text="Sign In Now!"></asp:HyperLink>
+                </div>
                 </div>
             </div>
         </div>

@@ -22,7 +22,7 @@
                 <div class="container">
                     <asp:HyperLink ID="Home" runat="server" CssClass="navbar-brand font-weight-bold" NavigateUrl="HomeGUI.aspx">
                         <asp:Image ID="Logo" runat="server" ImageUrl="~/ASSETS/IMG/paws.svg" Width="40" Height="40" CssClass="d-inline-block align-middle" />
-                        Pet Shop
+                        Pet Store
                     </asp:HyperLink>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
