@@ -38,30 +38,38 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body"></div>
-                            <div class="card-footer"></div>
+                <asp:ListView runat="server" ID="products" OnPagePropertiesChanging="OnPagePropertiesChanging">
+                    <LayoutTemplate>
+                        <div class="row">
+                            <div id="itemPlaceholder" runat="server"></div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body"></div>
-                            <div class="card-footer"></div>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <div class="col-md-4" id="itemPlaceHolder" runat="server">
+                            <div class="card">
+                                <div class="card-header">
+                                    <asp:Label runat="server" Text="Test"></asp:Label>
+                                </div>
+                                <div class="card-body">
+                                    <asp:Image runat="server" CssClass="w-100" ImageUrl="../ASSETS/IMG/thuc-an-cho-meo-banner.jpg" />
+                                </div>
+                                <div class="card-footer">
+                                    <asp:Button runat="server" CssClass="btn btn-primary" Text="Add To Cart" />
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body"></div>
-                            <div class="card-footer"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body"></div>
-                            <div class="card-footer"></div>
-                        </div>
+                    </ItemTemplate>
+                </asp:ListView>
+                <div class="row py-3">
+                    <div class="col-md-12">
+                        <ul class="pagination">
+                            <asp:DataPager ID="dtpArticles" runat="server" PagedControlID="products" PageSize="9">
+                                <Fields>
+                                    <asp:NumericPagerField ButtonType="Link" CurrentPageLabelCssClass="bg-primary page-link text-light"
+                                        NumericButtonCssClass="page-link" />
+                                </Fields>
+                            </asp:DataPager>
+                        </ul>
                     </div>
                 </div>
             </div>

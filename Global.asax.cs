@@ -17,7 +17,8 @@ namespace PRN292_Project.DTL
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            
+            List<Product> cart = new List<Product>();
+            Session.Add("Cart", cart);
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

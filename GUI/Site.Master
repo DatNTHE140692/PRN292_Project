@@ -1,5 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PRN292_Project.Site" %>
 
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Linq" %>
+<%@ Import Namespace="PRN292_Project.DTL" %>
+<%@ Import Namespace="PRN292_Project.GUI" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -35,56 +40,67 @@
                                 </asp:HyperLink>
                             </li>
                             &nbsp;
-                        <li class="nav-item">
-                            <asp:HyperLink runat="server" CssClass="nav-link btn btn-light text-dark" NavigateUrl="~/GUI/ShopGUI.aspx">
-                                <i class="fa fa-shopping-basket"></i>&nbsp;Shop
-                            </asp:HyperLink>
-                        </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link btn btn-light text-dark" NavigateUrl="~/GUI/ShopGUI.aspx">
+                                    <i class="fa fa-shopping-basket"></i>&nbsp;Shop
+                                </asp:HyperLink>
+                            </li>
                             &nbsp;
-                        <li class="nav-item">
-                            <asp:HyperLink runat="server" CssClass="nav-link btn btn-light text-dark" NavigateUrl="~/GUI/ContactGUI.aspx">
-                                <i class="fa fa-envelope"></i>&nbsp;Contact
-                            </asp:HyperLink>
-                        </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link btn btn-light text-dark" NavigateUrl="~/GUI/ContactGUI.aspx">
+                                    <i class="fa fa-envelope"></i>&nbsp;Contact
+                                </asp:HyperLink>
+                            </li>
                             &nbsp;
-                        <li class="nav-item">
-                            <asp:HyperLink runat="server" CssClass="nav-link btn btn-light text-dark" NavigateUrl="~/GUI/AboutGUI.aspx">
-                                <i class="fa fa-info-circle"></i>&nbsp;About Us
-                            </asp:HyperLink>
-                        </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link btn btn-light text-dark" NavigateUrl="~/GUI/AboutGUI.aspx">
+                                    <i class="fa fa-info-circle"></i>&nbsp;About Us
+                                </asp:HyperLink>
+                            </li>
                         </ul>
-                        <asp:LoginView runat="server">
-                            <AnonymousTemplate>
-                                <div class="dropdown">
-                                    <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-sign-in"></i>&nbsp;Sign In / Sign Up
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/GUI/SignInGUI.aspx"><i class="fa fa-sign-in"></i>&nbsp;Sign In</asp:HyperLink>
-                                        <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/GUI/SignUpGUI.aspx"><i class="fa fa-user-plus"></i>&nbsp;Sign Up</asp:HyperLink>
+                        <%
+                            List<Product> cart = Session["Cart"] as List<Product>;
+                            if (cart.Count == 0)
+                            {
+                        %>
+                        <asp:HyperLink runat="server" CssClass="btn btn-success">
+                                <i class="fa fa-shopping-cart"></i>&nbsp;Your Cart&nbsp;<span class="badge badge-light">0</span>
+                        </asp:HyperLink>
+                        <%
+                            }
+                            else
+                            {
+                        %>
+                        <div class="btn-group">
+                            <a class="btn btn-success"><i class="fa fa-shopping-cart"></i>&nbsp;Your Cart&nbsp;<span class="badge badge-light"><%= cart.Count %></span></a>
+                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <%
+                                    foreach (Product p in cart)
+                                    {
+                                %>
+                                <div class="dropdown-item">
+                                    <div class="row">
+                                        <div class="col">
+                                            <asp:Image runat="server" ImageUrl="<%= p.ImageUrls %>" />
+                                        </div>
+                                        <div class="col">
+                                            <a href="ProductDetail.aspx?id=<%= p.Id %>"><%= p.Name %></a>
+                                            <br />
+                                            <span><%= p.Price %> x <%= p.Quantity %></span>
+                                        </div>
                                     </div>
                                 </div>
-                            </AnonymousTemplate>
-                            <LoggedInTemplate>
-                                <div class="dropdown">
-                                    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-shopping-cart"></i>&nbsp;Your Cart&nbsp;<span class="badge badge-light">4</span>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    </div>
-                                </div>
-                                &nbsp;
-                            <div class="dropdown">
-                                <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-user"></i>&nbsp;
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/GUI/SignUpGUI.aspx"><i class="fa fa-user"></i>&nbsp;Your Info</asp:HyperLink>
-                                    <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/GUI/SignUpGUI.aspx"><i class="fa fa-sign-out"></i>&nbsp;Sign Out</asp:HyperLink>
-                                </div>
+                                <%
+                                    }
+                                %>
                             </div>
-                            </LoggedInTemplate>
-                        </asp:LoginView>
+                        </div>
+                        <%
+                            }
+                        %>
                     </div>
                 </div>
             </nav>

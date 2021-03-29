@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using PRN292_Project.DTL;
+using PRN292_Project.GUI;
 
 namespace PRN292_Project
 {
     public partial class Site : System.Web.UI.MasterPage
     {
+        private List<Cart> cart;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

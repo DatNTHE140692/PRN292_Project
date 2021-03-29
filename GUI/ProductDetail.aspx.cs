@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace PRN292_Project.GUI
 {
-    public partial class ContactManagement : System.Web.UI.Page
+    public partial class ProductDetail : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

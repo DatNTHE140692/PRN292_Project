@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminGUI.Master.cs" Inherits="PRN292_Project.GUI.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../ASSETS/CSS/style.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <asp:Label runat="server" Text="Admin Control Panel" CssClass="btn btn-danger text-light mr-1"></asp:Label>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="btn btn-light" NavigateUrl="ProductAdminGUI.aspx"><i class="fa fa-shopping-cart"></i>&nbsp;Product</asp:HyperLink>
+                            </li>
+                            &nbsp;
+                                <li class="nav-item">
+                                    <asp:HyperLink runat="server" CssClass="btn btn-light"><i class="fa fa-th-list"></i>&nbsp;Order</asp:HyperLink>
+                                </li>
+                            &nbsp;
+                                <li class="nav-item">
+                                    <asp:HyperLink runat="server" CssClass="btn btn-light"><i class="fa fa-newspaper-o"></i>&nbsp;Blog</asp:HyperLink>
+                                </li>
+                            &nbsp;
+                                <li class="nav-item">
+                                    <asp:HyperLink runat="server" CssClass="btn btn-light" NavigateUrl=""><i class="fa fa-envelope"></i>&nbsp;Contact</asp:HyperLink>
+                                </li>
+                        </ul>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <asp:Label runat="server" ID="txtAdmin"></asp:Label>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <asp:Button runat="server" Text="Sign Out!" ID="btnLogout" CssClass="dropdown-item" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer>
+            <div class="bg-dark text-center p-3">
+                <asp:HyperLink CssClass="text-light" runat="server">Made with&nbsp;<i class="fa fa-heartbeat"></i>&nbsp;By Group 6 - SE1417</asp:HyperLink>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>

@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PRN292_Project.GUI
+namespace PRN292_Project.AdminGUI
 {
 
 
-    public partial class SignInGUI
+    public partial class ProductAdminGUI
     {
 
         /// <summary>
-        /// Login control.
+        /// ProductTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Login Login;
+        protected global::System.Web.UI.WebControls.GridView ProductTable;
     }
 }

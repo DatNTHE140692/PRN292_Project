@@ -5,11 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PRN292_Project.GUI
+namespace PRN292_Project.AdminGUI
 {
-    public partial class CategoryManagement : System.Web.UI.Page
+    public partial class ProductAdminGUI : BaseAuthentication
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected override void Process_PageLoad(object sender, EventArgs e)
         {
 
         }

@@ -7,11 +7,8 @@ using System.Web.UI.WebControls;
 
 namespace PRN292_Project.GUI
 {
-    public partial class SignUpGUI : System.Web.UI.Page
+    public partial class Admin : System.Web.UI.MasterPage
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
+        protected void Page_Load(object sender, EventArgs e) {}
     }
 }

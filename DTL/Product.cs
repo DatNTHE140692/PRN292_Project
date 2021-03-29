@@ -9,12 +9,20 @@ namespace PRN292_Project.DTL
     {
         private int id;
         private string name;
+        private float price;
         private Category category;
-        private int quantity;
         private string overview;
         private string description;
-        private List<string> imageUrls = new List<string>();
         private bool isInStock;
+        private List<string> imageUrls = new List<string>();
+        private string thumbnail;
+        private int quantity;
+
+        public int Quantity
+        {
+            get => quantity;
+            set => quantity = value;
+        }
 
         public int Id
         {
@@ -28,16 +36,16 @@ namespace PRN292_Project.DTL
             set => name = value;
         }
 
+        public float Price
+        {
+            get => price;
+            set => price = value;
+        }
+
         public Category Category
         {
             get => category;
             set => category = value;
-        }
-
-        public int Quantity
-        {
-            get => quantity;
-            set => quantity = value;
         }
 
         public string Overview
@@ -52,16 +60,22 @@ namespace PRN292_Project.DTL
             set => description = value;
         }
 
+        public bool IsInStock
+        {
+            get => isInStock;
+            set => isInStock = value;
+        }
+
         public List<string> ImageUrls
         {
             get => imageUrls;
             set => imageUrls = value;
         }
 
-        public bool IsInStock
+        public string Thumbnail
         {
-            get => isInStock;
-            set => isInStock = value;
+            get => thumbnail;
+            set => thumbnail = value;
         }
     }
 }

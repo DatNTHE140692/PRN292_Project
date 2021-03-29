@@ -9,9 +9,6 @@ namespace PRN292_Project
 {
     public partial class HomeGUI : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
+        protected void Page_Load(object sender, EventArgs e) {}
     }
 }
