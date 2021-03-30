@@ -17,7 +17,7 @@ namespace PRN292_Project.AdminGUI
 
             if (Session["Admin"] != null)
             {
-                Response.Redirect("ProductAdminGUI.aspx");
+                Response.Redirect("DashboardGUI.aspx");
             }
         }
 
@@ -30,7 +30,7 @@ namespace PRN292_Project.AdminGUI
                 return;
             }
             Session.Add("Admin", admin);
-            Response.Redirect("ProductAdminGUI.aspx");
+            Response.Redirect("DashboardGUI.aspx");
         }
 
         private string MD5Hash(string text)

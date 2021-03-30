@@ -11,16 +11,25 @@ namespace PRN292_Project.AdminGUI
 {
 
 
-    public partial class ProductAdminGUI
+    public partial class ContactManager
     {
 
         /// <summary>
-        /// ProductTable control.
+        /// tblContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProductTable;
+        protected global::System.Web.UI.WebControls.GridView tblContact;
+
+        /// <summary>
+        /// ContactDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ContactDataSource;
     }
 }

@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace PRN292_Project.AdminGUI
 {
-    public partial class ProductAdminGUI : BaseAuthentication
+    public partial class DashboardGUI : BaseAuthentication
     {
         protected override void Process_PageLoad(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -23,7 +23,7 @@ namespace PRN292_Project.GUI
         {
             products.DataSource = null;
             products.DataSourceID = null;
-            products.DataSource = ProductDAO.GetDataTable();
+            //products.DataSource = ProductDAO.GetDataTable();
             products.DataBind();
         }
 

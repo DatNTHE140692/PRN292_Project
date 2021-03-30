@@ -1,10 +1,31 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
 using PRN292_Project.DTL;
 
 namespace PRN292_Project.DAL
 {
     public class OrderDAO
     {
+        public static DataTable GetDataTable()
+        {
+            return DAO.GetDataTable("SELECT * FROM dbo.Orders");
+        }
+
+        public static bool Update(Order o)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE dbo.Orders SET isAccept = @isAccept WHERE id = @id");
+            cmd.Parameters.AddWithValue("@isAccept", o.IsAccept);
+            cmd.Parameters.AddWithValue("@id", o.ID);
+            return DAO.UpdateTable(cmd);
+        }
+
+        public static bool Delete(Order o)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM dbo.Orders WHERE id = @id");
+            cmd.Parameters.AddWithValue("@id", o.ID);
+            return OrderDetailDAO.Delete(o) && DAO.UpdateTable(cmd);
+        }
+
         public static bool Insert(Order o)
         {
             string sql = @"INSERT INTO dbo.Orders(orderDate, firstName, lastName, email, phoneNumber, [address], province, city, country, total, isAccept) " +

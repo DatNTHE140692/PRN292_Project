@@ -14,10 +14,14 @@ namespace PRN292_Project.AdminGUI
         {
             if (Session["Admin"] != null)
             {
-                Label txtAdmin = (Label)Page.Master.FindControl("txtAdmin");
-                Button btnLogout = (Button)Page.Master.FindControl("btnLogout");
-                txtAdmin.Text = ((Admin)Session["Admin"]).UserName;
-                btnLogout.Click += btnLogOut_Click;
+                if (!IsPostBack)
+                {
+                    Label txtAdmin = (Label)Page.Master.FindControl("txtAdmin");
+                    Button btnLogout = (Button)Page.Master.FindControl("btnLogout");
+                    txtAdmin.Text += "<i class=\"fa fa-user-circle-o\" aria-hidden=\"true\"></i> " +
+                                     ((Admin)Session["Admin"]).UserName;
+                    btnLogout.Click += btnLogOut_Click;
+                }
                 Process_PageLoad(sender, e);
             }
             else

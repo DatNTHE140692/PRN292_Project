@@ -31,6 +31,7 @@
                         %>
                         <div class="carousel-item">
                             <asp:Image runat="server" CssClass="d-block w-100" ImageUrl="<%= imageUrl %>" />
+                            <img src="<%= imageUrl %>" />
                         </div>
                         <%
                             }

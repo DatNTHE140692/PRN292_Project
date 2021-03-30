@@ -17,34 +17,37 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
-                    <asp:Label runat="server" Text="Admin Control Panel" CssClass="btn btn-danger text-light mr-1"></asp:Label>
+                    <asp:HyperLink runat="server" Text="Admin Control Panel" Font-Bold="True" CssClass="btn btn-danger mr-1" NavigateUrl="DashboardGUI.aspx"></asp:HyperLink>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <div class="dropdown">
+                                <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-shopping-cart"></i> Store
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="OrdersManager.aspx"><i class="fa fa-check-square-o"></i> Orders</asp:HyperLink>
+                                    <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="ProductsManager.aspx"><i class="fa fa-th"></i> Products</asp:HyperLink>
+                                    <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="CategoriesManager.aspx"><i class="fa fa-th-list"></i> Categories</asp:HyperLink>
+                                </div>
+                            </div>
+                            &nbsp;
                             <li class="nav-item">
-                                <asp:HyperLink runat="server" CssClass="btn btn-light" NavigateUrl="ProductAdminGUI.aspx"><i class="fa fa-shopping-cart"></i>&nbsp;Product</asp:HyperLink>
+                                <asp:HyperLink runat="server" CssClass="btn btn-light"><i class="fa fa-newspaper-o"></i>&nbsp;Blog</asp:HyperLink>
                             </li>
                             &nbsp;
-                                <li class="nav-item">
-                                    <asp:HyperLink runat="server" CssClass="btn btn-light"><i class="fa fa-th-list"></i>&nbsp;Order</asp:HyperLink>
-                                </li>
-                            &nbsp;
-                                <li class="nav-item">
-                                    <asp:HyperLink runat="server" CssClass="btn btn-light"><i class="fa fa-newspaper-o"></i>&nbsp;Blog</asp:HyperLink>
-                                </li>
-                            &nbsp;
-                                <li class="nav-item">
-                                    <asp:HyperLink runat="server" CssClass="btn btn-light" NavigateUrl=""><i class="fa fa-envelope"></i>&nbsp;Contact</asp:HyperLink>
-                                </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="btn btn-light" NavigateUrl="ContactManager.aspx"><i class="fa fa-envelope"></i>&nbsp;Contact</asp:HyperLink>
+                            </li>
                         </ul>
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <asp:Label runat="server" ID="txtAdmin"></asp:Label>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <asp:Button runat="server" Text="Sign Out!" ID="btnLogout" CssClass="dropdown-item" />
+                                <asp:Button runat="server" Text="Sign Out!" ID="btnLogout" CssClass="dropdown-item"/>
                             </div>
                         </div>
                     </div>

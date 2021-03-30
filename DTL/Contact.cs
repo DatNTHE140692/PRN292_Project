@@ -2,12 +2,14 @@
 {
     public class Contact
     {
+        public int ID { get; set; }
         private string firstName;
         private string lastName;
         private string email;
         private string phoneNumber;
         private string title;
         private string content;
+        public bool IsRead { get; set; }
 
         public string FirstName
         {

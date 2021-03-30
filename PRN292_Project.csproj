@@ -56,14 +56,21 @@
   <ItemGroup>
     <Content Include="AdminGUI\AdminLoginGUI.aspx" />
     <Content Include="AdminGUI\BaseAuthentication.aspx" />
-    <Content Include="AdminGUI\ProductAddGUI.aspx" />
-    <Content Include="AdminGUI\ProductAdminGUI.aspx" />
+    <Content Include="AdminGUI\ContactManager.aspx" />
+    <Content Include="AdminGUI\DashboardGUI.aspx" />
+    <Content Include="AdminGUI\CategoriesManager.aspx" />
+    <Content Include="AdminGUI\OrdersManager.aspx" />
+    <Content Include="AdminGUI\ProductsManager.aspx" />
+    <Content Include="ASSETS\IMG\blog.svg" />
     <Content Include="ASSETS\IMG\cham-soc-cho-meo-banner.jpg" />
+    <Content Include="ASSETS\IMG\checklist.svg" />
+    <Content Include="ASSETS\IMG\inbox.svg" />
     <Content Include="ASSETS\IMG\person-icon.png" />
     <Content Include="ASSETS\IMG\pet-shop-sai-gon-1.jpg" />
     <Content Include="ASSETS\IMG\pet-shop-sai-gon-2.jpg" />
     <Content Include="ASSETS\IMG\pet-shop-sai-gon-3.jpg" />
     <Content Include="ASSETS\IMG\pet-shop-sai-gon-4.jpg" />
+    <Content Include="ASSETS\IMG\shops.svg" />
     <Content Include="ASSETS\IMG\suc-khoe-cho-meo-banner.jpg" />
     <Content Include="ASSETS\IMG\thuc-an-cho-cho-banner.jpg" />
     <Content Include="ASSETS\IMG\thuc-an-cho-meo-banner.jpg" />
@@ -103,21 +110,43 @@
     <Compile Include="AdminGUI\BaseAuthentication.aspx.designer.cs">
       <DependentUpon>BaseAuthentication.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminGUI\ProductAddGUI.aspx.cs">
-      <DependentUpon>ProductAddGUI.aspx</DependentUpon>
+    <Compile Include="AdminGUI\ContactManager.aspx.cs">
+      <DependentUpon>ContactManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminGUI\ProductAddGUI.aspx.designer.cs">
-      <DependentUpon>ProductAddGUI.aspx</DependentUpon>
+    <Compile Include="AdminGUI\ContactManager.aspx.designer.cs">
+      <DependentUpon>ContactManager.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminGUI\ProductAdminGUI.aspx.cs">
-      <DependentUpon>ProductAdminGUI.aspx</DependentUpon>
+    <Compile Include="AdminGUI\DashboardGUI.aspx.cs">
+      <DependentUpon>DashboardGUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminGUI\ProductAdminGUI.aspx.designer.cs">
-      <DependentUpon>ProductAdminGUI.aspx</DependentUpon>
+    <Compile Include="AdminGUI\DashboardGUI.aspx.designer.cs">
+      <DependentUpon>DashboardGUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\CategoriesManager.aspx.cs">
+      <DependentUpon>CategoriesManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\CategoriesManager.aspx.designer.cs">
+      <DependentUpon>CategoriesManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\OrdersManager.aspx.cs">
+      <DependentUpon>OrdersManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\OrdersManager.aspx.designer.cs">
+      <DependentUpon>OrdersManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\ProductsManager.aspx.cs">
+      <DependentUpon>ProductsManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\ProductsManager.aspx.designer.cs">
+      <DependentUpon>ProductsManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\AdminDAO.cs" />
+    <Compile Include="DAL\CategoryDAO.cs" />
     <Compile Include="DAL\ContactDAO.cs" />
     <Compile Include="DAL\OrderDAO.cs" />
     <Compile Include="DAL\OrderDetailDAO.cs" />

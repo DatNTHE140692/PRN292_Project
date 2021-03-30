@@ -11,26 +11,8 @@ namespace PRN292_Project.AdminGUI
 {
 
 
-    public partial class ProductAddGUI
+    public partial class ProductManager
     {
-
-        /// <summary>
-        /// txtName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
-
-        /// <summary>
-        /// txtPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrice;
 
         /// <summary>
         /// cbCategory control.
@@ -42,21 +24,21 @@ namespace PRN292_Project.AdminGUI
         protected global::System.Web.UI.WebControls.DropDownList cbCategory;
 
         /// <summary>
-        /// txtOverview control.
+        /// dsCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOverview;
+        protected global::System.Web.UI.WebControls.ObjectDataSource dsCategory;
 
         /// <summary>
-        /// txtDescription control.
+        /// tblProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        protected global::System.Web.UI.WebControls.GridView tblProducts;
     }
 }
