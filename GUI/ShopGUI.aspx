@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" CodeBehind="ShopGUI.aspx.cs" Inherits="PRN292_Project.GUI.ShopGUI" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="PRN292_Project.DAL" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Shop | Pet Store</title>
@@ -24,16 +26,15 @@
                 <div class="product-categories">
                     <ul class="list-group">
                         <li class="list-group-item active">Product Categories</li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Cras justo odio <span class="badge badge-primary badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Dapibus ac facilisis in <span class="badge badge-primary badge-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Morbi leo risus <span class="badge badge-primary badge-pill">1</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Morbi leo risus <span class="badge badge-primary badge-pill">1</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Morbi leo risus <span class="badge badge-primary badge-pill">1</span>
-                        </li>
+                        <%
+                            DataTable dt = CategoryDAO.GetDataTable();
+                            foreach (DataRow row in dt.Rows)
+                            {
+                        %>
+                            <li class="list-group-item d-flex justify-content-between align-items-center"><a href="ShopGUI.aspx?category=<%= row[0].ToString() %>"><%= row[1].ToString() %></a><span class="badge badge-primary badge-pill"><%= row[2].ToString() %></span></li>
+                        <%
+                        }
+                        %>
                     </ul>
                 </div>
             </div>

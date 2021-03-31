@@ -1,25 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" CodeBehind="HomeGUI.aspx.cs" Inherits="PRN292_Project.HomeGUI" %>
 
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="PRN292_Project.DAL" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Home | Pet Store</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container pt-2 pb-2">
         <div class="row">
-            <div class="col-md-12"><h1>Home</h1></div>
             <div class="col-md-3">
                 <ul class="list-group">
                     <li class="list-group-item active">Product Categories</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <%
+                        DataTable dt = CategoryDAO.GetDataTable();
+                        foreach (DataRow row in dt.Rows)
+                        {
+                    %>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><a href="ShopGUI.aspx?Category=<%= row[0].ToString() %>"><%= row[1].ToString() %></a><span class="badge badge-primary badge-pill"><%= row[2].ToString() %></span></li>
+                    <%
+                        }
+                    %>
                 </ul>
             </div>
             <div class="col-md-9">
@@ -55,19 +57,29 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                <asp:Image runat="server" CssClass="w-100" ImageUrl="../ASSETS/IMG/thuc-an-cho-cho-banner.jpg"/>
-            </div>
-            <div class="col-md-3">
-                <asp:Image runat="server" CssClass="w-100" ImageUrl="../ASSETS/IMG/thuc-an-cho-cho-banner.jpg"/>
-            </div>
-            <div class="col-md-3">
-                <asp:Image runat="server" CssClass="w-100" ImageUrl="../ASSETS/IMG/thuc-an-cho-cho-banner.jpg"/>
-            </div>
-            <div class="col-md-3">
-                <asp:Image runat="server" CssClass="w-100" ImageUrl="../ASSETS/IMG/thuc-an-cho-cho-banner.jpg"/>
-            </div>
-        </div>
+        <h3>Latest Products</h3>
+        <asp:ListView runat="server" ID="lvLatestProduct" DataSourceID="dsLatest" EnableModelValidation="True">
+            <LayoutTemplate>
+                <div class="row">
+                    <div id="itemPlaceholder" runat="server"></div>
+                </div>
+            </LayoutTemplate>
+            <ItemTemplate>
+                <div class="col-md-3" runat="server">
+                    <div class="card">
+                        <div class="card-header">
+                            <asp:HyperLink ID="TitleLink" runat="server" NavigateUrl='<%# "ProductDetailGUI.aspx?ID=" + Eval("ID") %>' Text='<%# Eval("Name") %>' />
+                        </div>
+                        <div class="card-body">
+                            <asp:Image runat="server" CssClass="w-100" ImageUrl='<%# Eval("Thumbnail") %>' />
+                        </div>
+                        <div class="card-footer">
+                            <asp:Label runat="server" CssClass="text-dark" Font-Bold="True">$<%# Eval("Price") %></asp:Label>
+                        </div>
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:ListView>
+        <asp:ObjectDataSource runat="server" ID="dsLatest" SelectMethod="GetTop4Latest" TypeName="PRN292_Project.DAL.ProductDAO"></asp:ObjectDataSource>
     </div>
 </asp:Content>

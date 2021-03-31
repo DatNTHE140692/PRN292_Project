@@ -12,7 +12,7 @@ namespace PRN292_Project.DAL
     {
         public static DataTable GetDataTable()
         {
-            return DAO.GetDataTable("SELECT * FROM dbo.Product_Categories");
+            return DAO.GetDataTable("SELECT pc.id, pc.name, COUNT(p.id) [count] FROM dbo.Products p RIGHT JOIN dbo.Product_Categories pc ON pc.id = p.cid GROUP BY pc.id, pc.name");
         }
         
         public static DataTable GetDataTableAll()

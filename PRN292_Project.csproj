@@ -56,6 +56,7 @@
   <ItemGroup>
     <Content Include="AdminGUI\AdminLoginGUI.aspx" />
     <Content Include="AdminGUI\BaseAuthentication.aspx" />
+    <Content Include="AdminGUI\BlogManager.aspx" />
     <Content Include="AdminGUI\ContactManager.aspx" />
     <Content Include="AdminGUI\DashboardGUI.aspx" />
     <Content Include="AdminGUI\CategoriesManager.aspx" />
@@ -74,7 +75,10 @@
     <Content Include="ASSETS\IMG\suc-khoe-cho-meo-banner.jpg" />
     <Content Include="ASSETS\IMG\thuc-an-cho-cho-banner.jpg" />
     <Content Include="ASSETS\IMG\thuc-an-cho-meo-banner.jpg" />
-    <Content Include="GUI\ProductDetail.aspx" />
+    <Content Include="GUI\BlogGUI.aspx" />
+    <Content Include="GUI\CheckOutGUI.aspx" />
+    <Content Include="GUI\OrderCompleteGUI.aspx" />
+    <Content Include="GUI\ProductDetailGUI.aspx" />
     <Content Include="GUI\Site.Master" />
     <Content Include="AdminGUI\AdminGUI.Master" />
     <None Include="Web.Debug.config">
@@ -109,6 +113,13 @@
     </Compile>
     <Compile Include="AdminGUI\BaseAuthentication.aspx.designer.cs">
       <DependentUpon>BaseAuthentication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\BlogManager.aspx.cs">
+      <DependentUpon>BlogManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\BlogManager.aspx.designer.cs">
+      <DependentUpon>BlogManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminGUI\ContactManager.aspx.cs">
       <DependentUpon>ContactManager.aspx</DependentUpon>
@@ -176,12 +187,26 @@
     <Compile Include="AdminGUI\AdminGUI.Master.designer.cs">
       <DependentUpon>AdminGUI.Master</DependentUpon>
     </Compile>
+    <Compile Include="GUI\BlogGUI.aspx.cs">
+      <DependentUpon>BlogGUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\BlogGUI.aspx.designer.cs">
+      <DependentUpon>BlogGUI.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CheckOutGUI.aspx.cs">
+      <DependentUpon>CheckOutGUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\CheckOutGUI.aspx.designer.cs">
+      <DependentUpon>CheckOutGUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\ContactGUI.aspx.cs">
       <DependentUpon>ContactGUI.aspx</DependentUpon>
@@ -197,12 +222,19 @@
     <Compile Include="GUI\HomeGUI.aspx.designer.cs">
       <DependentUpon>HomeGUI.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ProductDetail.aspx.cs">
-      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    <Compile Include="GUI\OrderCompleteGUI.aspx.cs">
+      <DependentUpon>OrderCompleteGUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\ProductDetail.aspx.designer.cs">
-      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    <Compile Include="GUI\OrderCompleteGUI.aspx.designer.cs">
+      <DependentUpon>OrderCompleteGUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProductDetailGUI.aspx.cs">
+      <DependentUpon>ProductDetailGUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductDetailGUI.aspx.designer.cs">
+      <DependentUpon>ProductDetailGUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\ShopGUI.aspx.cs">
       <DependentUpon>ShopGUI.aspx</DependentUpon>

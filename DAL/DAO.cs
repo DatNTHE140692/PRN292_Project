@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 
 namespace PRN292_Project.DAL
 {
-    class DAO
+    public class DAO
     {
-        static string strConn = ConfigurationManager.ConnectionStrings["SQLServerString"].ConnectionString;
+        public static string strConn = ConfigurationManager.ConnectionStrings["SQLServerString"].ConnectionString;
 
         static public DataTable GetDataTable(string sqlSelect)
         {

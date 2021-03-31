@@ -15,23 +15,23 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col">
-                                    <asp:Label runat="server" Text="First Name:*"></asp:Label>
+                                    <asp:Label runat="server" Text="First Name:"></asp:Label>
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage="*" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                     <asp:TextBox runat="server" ID="txtFirstName" CssClass="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage="First Name Required!" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col">
-                                    <asp:Label runat="server" Text="Last Name:*"></asp:Label>
+                                    <asp:Label runat="server" Text="Last Name:"></asp:Label>
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtLastName" ErrorMessage="*" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                     <asp:TextBox runat="server" ID="txtLastName" CssClass="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtLastName" ErrorMessage="Last Name Required!" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col">
-                                    <asp:Label runat="server" Text="Email:*"></asp:Label>
+                                    <asp:Label runat="server" Text="Email:"></asp:Label>
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtEmail" SetFocusOnError="True" ErrorMessage="*"></asp:RequiredFieldValidator>
                                     <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtEmail" SetFocusOnError="True" ErrorMessage="Email Required!"></asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator runat="server" ID="EmailFormRequired" ControlToValidate="txtEmail" SetFocusOnError="True" ErrorMessage="Incorrect Email!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="col">
@@ -41,14 +41,14 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <asp:Label runat="server" Text="Title:*"></asp:Label>
+                            <asp:Label runat="server" Text="Title:"></asp:Label>
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtTitle" ErrorMessage="*" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             <asp:TextBox runat="server" ID="txtTitle" CssClass="form-control"></asp:TextBox>
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtTitle" ErrorMessage="Title Required!" SetFocusOnError="True"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group">
-                            <asp:Label runat="server" Text="Content:*"></asp:Label>
+                            <asp:Label runat="server" Text="Content:"></asp:Label>
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContent" ErrorMessage="*" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             <asp:TextBox runat="server" ID="txtContent" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContent" ErrorMessage="Content Required!" SetFocusOnError="True"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                     <div class="card-footer">

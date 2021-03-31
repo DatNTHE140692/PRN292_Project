@@ -7,15 +7,15 @@
     <div class="container py-3">
         <div class="row">
             <div class="col-md-12">
-                <asp:GridView ID="tblContact" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="0" DataSourceID="ContactDataSource" EnableModelValidation="True" GridLines="None" CssClass="table table-hover" EnableTheming="False" EnableViewState="False" PageSize="5" AutoGenerateColumns="false">
+                <asp:GridView ID="tblContact" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="0" DataSourceID="ContactDataSource" EnableModelValidation="True" GridLines="None" CssClass="table table-hover" EnableTheming="False" EnableViewState="False" PageSize="5" AutoGenerateColumns="false" DataKeyNames="ID">
                     <Columns>
-                        <asp:BoundField HeaderText="ID" DataField="ID" />
-                        <asp:BoundField HeaderText="First Name" DataField="FirstName" />
-                        <asp:BoundField HeaderText="Last Name" DataField="LastName" />
-                        <asp:BoundField HeaderText="Email" DataField="Email" />
-                        <asp:BoundField HeaderText="Phone Number" DataField="PhoneNumber" />
-                        <asp:BoundField HeaderText="Title" DataField="Title" />
-                        <asp:BoundField HeaderText="Content" DataField="Content" />
+                        <asp:BoundField HeaderText="ID" DataField="ID" ReadOnly="True" />
+                        <asp:BoundField HeaderText="First Name" DataField="FirstName" ReadOnly="True" />
+                        <asp:BoundField HeaderText="Last Name" DataField="LastName" ReadOnly="True" />
+                        <asp:BoundField HeaderText="Email" DataField="Email" ReadOnly="True"/>
+                        <asp:BoundField HeaderText="Phone Number" DataField="PhoneNumber" ReadOnly="True"/>
+                        <asp:BoundField HeaderText="Title" DataField="Title" ReadOnly="True" />
+                        <asp:BoundField HeaderText="Content" DataField="Content" ReadOnly="True" />
                         <asp:CheckBoxField HeaderText="Read" DataField="IsRead" />
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" HeaderText="Functions" ButtonType="Button" />
                     </Columns>
