@@ -18,6 +18,8 @@ namespace PRN292_Project.DTL
         protected void Session_Start(object sender, EventArgs e)
         {
             List<Product> cart = new List<Product>();
+            float totalCart = 0;
+            Session.Add("totalCart", totalCart);
             Session.Add("Cart", cart);
         }
 

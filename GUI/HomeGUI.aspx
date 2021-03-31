@@ -8,9 +8,9 @@
     <title>Home | Pet Store</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container pt-2 pb-2">
+    <div class="container py-3">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4">
                 <ul class="list-group">
                     <li class="list-group-item active">Product Categories</li>
                     <%
@@ -24,7 +24,7 @@
                     %>
                 </ul>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9 col-sm-8">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -65,12 +65,12 @@
                 </div>
             </LayoutTemplate>
             <ItemTemplate>
-                <div class="col-md-3" runat="server">
+                <div class="col-md-3 col-sm-6 py-1" runat="server">
                     <div class="card">
                         <div class="card-header">
-                            <asp:HyperLink ID="TitleLink" runat="server" NavigateUrl='<%# "ProductDetailGUI.aspx?ID=" + Eval("ID") %>' Text='<%# Eval("Name") %>' />
+                            <asp:HyperLink ID="TitleLink" Font-Bold="True" CssClass="h5" runat="server" NavigateUrl='<%# "ProductDetailGUI.aspx?id=" + Eval("ID") %>' Text='<%# Eval("Name") %>' />
                         </div>
-                        <div class="card-body">
+                        <div class="card-body py-0 px-0">
                             <asp:Image runat="server" CssClass="w-100" ImageUrl='<%# Eval("Thumbnail") %>' />
                         </div>
                         <div class="card-footer">

@@ -64,44 +64,57 @@
                             {
                         %>
                         <asp:HyperLink runat="server" CssClass="btn btn-success">
-                                <i class="fa fa-shopping-cart"></i>&nbsp;Your Cart&nbsp;<span class="badge badge-light">0</span>
+                                    <i class="fa fa-shopping-cart"></i>&nbsp;Your Cart&nbsp;<span class="badge badge-light">0</span>
                         </asp:HyperLink>
                         <%
                             }
                             else
                             {
                         %>
-                        <div class="btn-group">
-                            <a class="btn btn-success"><i class="fa fa-shopping-cart"></i>&nbsp;Your Cart&nbsp;<span class="badge badge-light"><%= cart.Count %></span></a>
-                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-success" data-toggle="dropdown">
+                                <i class="fa fa-shopping-cart"></i>&nbsp;Your Cart&nbsp;<span class="badge badge-light"><%= cart.Count %></span>
                             </button>
                             <div class="dropdown-menu">
                                 <%
                                     foreach (Product p in cart)
                                     {
                                 %>
-                                <div class="dropdown-item">
-                                    <div class="row">
-                                        <div class="col">
-                                            <asp:Image runat="server" ImageUrl="<%= p.ImageUrls %>" />
-                                        </div>
-                                        <div class="col">
-                                            <a href="ProductDetail.aspx?id=<%= p.Id %>"><%= p.Name %></a>
-                                            <br />
-                                            <span><%= p.Price %> x <%= p.Quantity %></span>
-                                        </div>
+                                <div class="row cart-detail">
+                                    <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                        <img src="<%= p.Thumbnail %>">
+                                    </div>
+                                    <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                        <p><a href="ProductDetailGUI.aspx?id=<%= p.Id %>" class="font-weight-bold text-dark h5"><%= p.Name %></a></p>
+                                        <span class="price text-warning">$<%= p.Price %></span>
+                                        <br />
+                                        <span class="count">Quantity: <%= p.Quantity %></span>
                                     </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
                                 <%
                                     }
                                 %>
+                                <div class="row mx-0">
+                                    <div class="col-md-4 col-sm-6">
+                                        <span class="font-weight-bold h5">Total:</span>
+                                    </div>
+                                    <div class="col-md-8 col-sm-6">
+                                        <span class="text-warning font-weight-bold h5">$<%= Session["totalCart"].ToString() %></span>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="row mx-0">
+                                    <div class="col-sm-12">
+                                        <asp:HyperLink CssClass="btn btn-lg btn-success w-100" runat="server">Check Out!</asp:HyperLink>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <%
-                            }
-                        %>
                     </div>
+                    <%
+                        }
+                    %>
                 </div>
             </nav>
         </header>
@@ -162,6 +175,36 @@
             </div>
         </footer>
     </form>
+    <style>
+        .dropdown {
+            float: right;
+        }
 
+            .dropdown .dropdown-menu {
+                width: 30rem !important;
+            }
+
+        .cart-detail {
+            padding: 15px 0px;
+        }
+
+        .cart-detail-img img {
+            width: 100%;
+            height: 100%;
+            padding-left: 15px;
+        }
+
+        .cart-detail-product p {
+            margin: 0px;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .cart-detail .price {
+            font-size: 15px;
+            margin-right: 10px;
+            font-weight: 500;
+        }
+    </style>
 </body>
 </html>

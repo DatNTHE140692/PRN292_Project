@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +15,7 @@ namespace PRN292_Project.DTL
         private string overview;
         private string description;
         private bool isInStock;
-        private List<string> imageUrls = new List<string>();
+        private ArrayList imageUrls = new ArrayList();
         private string thumbnail;
         private int quantity;
 
@@ -66,7 +67,7 @@ namespace PRN292_Project.DTL
             set => isInStock = value;
         }
 
-        public List<string> ImageUrls
+        public ArrayList ImageUrls
         {
             get => imageUrls;
             set => imageUrls = value;
