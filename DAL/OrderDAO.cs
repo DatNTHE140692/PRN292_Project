@@ -44,9 +44,9 @@ namespace PRN292_Project.DAL
             cmd.Parameters.AddWithValue("@city", o.City);
             cmd.Parameters.AddWithValue("@country", o.Country);
             cmd.Parameters.AddWithValue("@t", o.Total);
-            cmd.Parameters.AddWithValue("@isApproved", DBNull.Value);
-            cmd.Parameters.AddWithValue("@isProcessing", DBNull.Value);
-            cmd.Parameters.AddWithValue("@isCompleted", DBNull.Value);
+            cmd.Parameters.AddWithValue("@isApproved", false);
+            cmd.Parameters.AddWithValue("@isProcessing", false);
+            cmd.Parameters.AddWithValue("@isCompleted", false);
             return DAO.UpdateTable(cmd);
         }
     }

@@ -106,7 +106,7 @@
                                 <div class="dropdown-divider"></div>
                                 <div class="row mx-0">
                                     <div class="col-sm-12">
-                                        <asp:HyperLink CssClass="btn btn-lg btn-success w-100" runat="server">Check Out!</asp:HyperLink>
+                                        <asp:HyperLink CssClass="btn btn-lg btn-success w-100" runat="server" NavigateUrl="CartGUI.aspx">Your Cart</asp:HyperLink>
                                     </div>
                                 </div>
                             </div>
@@ -180,9 +180,9 @@
             float: right;
         }
 
-            .dropdown .dropdown-menu {
+        .dropdown .dropdown-menu {
                 width: 30rem !important;
-            }
+        }
 
         .cart-detail {
             padding: 15px 0px;

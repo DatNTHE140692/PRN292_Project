@@ -20,7 +20,7 @@
                         <asp:BoundField HeaderText="Category" DataField="Category" ReadOnly="True" />
                         <asp:TemplateField HeaderText="Image">
                             <ItemTemplate>
-                                <asp:Image ImageUrl='<%# Eval("Thumbnail") %>' CssClass="w-50" runat="server" />
+                                <asp:Image ImageUrl='<%# Eval("Thumbnail") %>' Width="150px" runat="server" />
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" HeaderText="Functions" ButtonType="Button" />

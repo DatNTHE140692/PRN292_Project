@@ -78,5 +78,16 @@ namespace PRN292_Project.DTL
             get => thumbnail;
             set => thumbnail = value;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Product)
+            {
+                Product p = obj as Product;
+                return p.Id == id;
+            }
+
+            return false;
+        }
     }
 }

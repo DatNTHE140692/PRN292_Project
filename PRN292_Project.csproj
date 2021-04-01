@@ -93,7 +93,7 @@
     <Content Include="ASSETS\IMG\paws.svg" />
     <Content Include="Global.asax" />
     <Content Include="GUI\AboutGUI.aspx" />
-    <Content Include="GUI\Cart.aspx" />
+    <Content Include="GUI\CartGUI.aspx" />
     <Content Include="GUI\ContactGUI.aspx" />
     <Content Include="GUI\HomeGUI.aspx" />
     <Content Include="GUI\ShopGUI.aspx" />
@@ -161,6 +161,7 @@
     <Compile Include="DAL\ContactDAO.cs" />
     <Compile Include="DAL\OrderDAO.cs" />
     <Compile Include="DAL\OrderDetailDAO.cs" />
+    <Compile Include="DAL\ShipmentDAO.cs" />
     <Compile Include="DTL\Admin.cs" />
     <Compile Include="DTL\Order.cs" />
     <Compile Include="DTL\Contact.cs" />
@@ -194,12 +195,12 @@
     <Compile Include="GUI\BlogGUI.aspx.designer.cs">
       <DependentUpon>BlogGUI.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Cart.aspx.cs">
-      <DependentUpon>Cart.aspx</DependentUpon>
+    <Compile Include="GUI\CartGUI.aspx.cs">
+      <DependentUpon>CartGUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Cart.aspx.designer.cs">
-      <DependentUpon>Cart.aspx</DependentUpon>
+    <Compile Include="GUI\CartGUI.aspx.designer.cs">
+      <DependentUpon>CartGUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\CheckOutGUI.aspx.cs">
       <DependentUpon>CheckOutGUI.aspx</DependentUpon>
