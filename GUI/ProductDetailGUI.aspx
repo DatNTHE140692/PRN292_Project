@@ -94,7 +94,7 @@
             </div>
             <div class="col-md-6">
                 <h3><%= p.Name %></h3>
-                <a class="badge badge-primary" href="ShopGUI.aspx?category?<%= p.Category.Id %>"><%= p.Category.Name %></a>
+                <a class="badge badge-primary" href="ShopGUI.aspx?category=<%= p.Category.Id %>"><%= p.Category.Name %></a>
                 <p>Quantity: <input type="number" min="1" value="1" name="txtQuantity"/></p>
                 <asp:Button runat="server" CssClass="btn btn-success" Text="Add to Cart" ID="btnAdd" OnClick="btnAdd_Click" />
                 <p><%= p.Overview %></p>

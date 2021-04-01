@@ -47,7 +47,7 @@
                                 <asp:Label runat="server" ID="txtAdmin"></asp:Label>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <asp:Button runat="server" Text="Sign Out!" ID="btnLogout" CssClass="dropdown-item"/>
+                                <asp:Button runat="server" Text="Sign Out!" ID="btnLogout" CssClass="dropdown-item" OnClick="btnLogout_OnClick"/>
                             </div>
                         </div>
                     </div>

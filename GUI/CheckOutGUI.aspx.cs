@@ -42,12 +42,10 @@ namespace PRN292_Project.GUI
                     od.Order.ID = OrderDAO.GetMaxID();
                     OrderDetailDAO.Insert(od);
                 }
-                Session.Clear();
                 Session.Abandon();
-                Cart = new List<Product>();
-                float totalCart = 0;
-                Session.Add("Cart", Cart);
-                Session.Add("totalCart", totalCart);
+                Session.Clear();
+                Session.Add("totalCart", 0);
+                Session.Add("Cart", new List<Product>());
                 Response.Redirect("OrderCompleteGUI.aspx");
             }
         }

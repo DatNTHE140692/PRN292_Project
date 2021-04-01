@@ -11,13 +11,42 @@
                 <asp:DropDownList ID="cbCategory" runat="server" AutoPostBack="True" DataSourceID="dsCategory" DataTextField="Name" DataValueField="ID" OnSelectedIndexChanged="cbCategory_SelectedIndexChanged"></asp:DropDownList>
                 <asp:ObjectDataSource runat="server" ID="dsCategory" SelectMethod="GetDataTableAll" TypeName="PRN292_Project.DAL.CategoryDAO"></asp:ObjectDataSource>
                 <br /><br />
-                <asp:GridView ID="tblProducts" runat="server" CssClass="w-100 table table-striped" CellPadding="0" EnableModelValidation="True" GridLines="None" PageSize="5" DataKeyNames="ID" AllowPaging="True" OnPageIndexChanging="tblProducts_PageIndexChanging" OnRowDeleting="tblProducts_RowDeleting" OnRowEditing="tblProducts_RowEditing" AutoGenerateColumns="False">
+                <asp:GridView ID="tblProducts" runat="server" CssClass="w-100 table table-striped" CellPadding="0" EnableModelValidation="True" GridLines="None" PageSize="5" DataKeyNames="ID" AllowPaging="True" OnPageIndexChanging="tblProducts_PageIndexChanging" OnRowDeleting="tblProducts_RowDeleting" OnRowEditing="tblProducts_RowEditing" AutoGenerateColumns="False" OnRowCancelingEdit="tblProducts_RowCancelingEdit" OnRowUpdating="tblProducts_RowUpdating">
                     <Columns>
                         <asp:BoundField HeaderText="ID" DataField="ID" ReadOnly="True" />
-                        <asp:BoundField HeaderText="Name" DataField="Name" />
-                        <asp:BoundField HeaderText="Price" DataField="Price" />
-                        <asp:CheckBoxField HeaderText="Stock" DataField="Stock" />
+                        <asp:TemplateField HeaderText="Name">  
+                            <ItemTemplate>     
+                                <%#Eval("Name")%>     
+                            </ItemTemplate>  
+                            <EditItemTemplate>  
+                                <asp:TextBox ID="txtName" runat="server" Text='<%#Eval("Name") %>'></asp:TextBox>  
+                            </EditItemTemplate>  
+                        </asp:TemplateField>  
+                        <asp:TemplateField HeaderText="Price">  
+                            <ItemTemplate>     
+                                <%#Eval("Price")%>     
+                            </ItemTemplate>  
+                            <EditItemTemplate>  
+                                <asp:TextBox ID="txtPrice" runat="server" Text='<%#Eval("Price") %>'></asp:TextBox>  
+                            </EditItemTemplate>  
+                        </asp:TemplateField>  
+                        <asp:TemplateField HeaderText="Stock">  
+                            <ItemTemplate>     
+                                <asp:CheckBox runat="server" Checked='<%#Eval("Stock") %>' Enabled="False"></asp:CheckBox> 
+                            </ItemTemplate>  
+                            <EditItemTemplate>  
+                                <asp:CheckBox ID="ckbStock" runat="server" Checked='<%#Eval("Stock") %>'></asp:CheckBox>  
+                            </EditItemTemplate>  
+                        </asp:TemplateField>  
                         <asp:BoundField HeaderText="Category" DataField="Category" ReadOnly="True" />
+                        <asp:TemplateField HeaderText="Price">  
+                            <ItemTemplate>     
+                                <%#Eval("Thumbnail")%>     
+                            </ItemTemplate>  
+                            <EditItemTemplate>  
+                                <asp:TextBox ID="txtThumbnail" runat="server" Text='<%#Eval("Thumbnail") %>'></asp:TextBox>  
+                            </EditItemTemplate>  
+                        </asp:TemplateField>  
                         <asp:TemplateField HeaderText="Image">
                             <ItemTemplate>
                                 <asp:Image ImageUrl='<%# Eval("Thumbnail") %>' Width="150px" runat="server" />

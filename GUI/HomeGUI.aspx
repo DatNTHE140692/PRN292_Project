@@ -18,7 +18,7 @@
                         foreach (DataRow row in dt.Rows)
                         {
                     %>
-                    <li class="list-group-item d-flex justify-content-between align-items-center"><a href="ShopGUI.aspx?Category=<%= row[0].ToString() %>"><%= row[1].ToString() %></a><span class="badge badge-primary badge-pill"><%= row[2].ToString() %></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><a href="ShopGUI.aspx?category=<%= row[0].ToString() %>"><%= row[1].ToString() %></a><span class="badge badge-primary badge-pill"><%= row[2].ToString() %></span></li>
                     <%
                         }
                     %>

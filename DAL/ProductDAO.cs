@@ -8,6 +8,27 @@ namespace PRN292_Project.DAL
 {
     public class ProductDAO
     {
+        public static DataTable GetDataTable()
+        {
+            return DAO.GetDataTable("SELECT * FROM Products ORDER BY id DESC");
+        }
+
+        public static DataTable GetDataTable(string key)
+        {
+            SqlCommand cmd = new SqlCommand(@"SELECT * " +
+                                            "FROM dbo.Products WHERE name LIKE '%' + @key + '%' OR overview LIKE '%' + @key + '%' OR [description] LIKE '%' + @key + '%' " +
+                                            "ORDER BY id DESC");
+            cmd.Parameters.AddWithValue("@key", key);
+            return DAO.GetDataTable(cmd);
+        }
+
+        public static DataTable GetDataTable(Category c)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.Products WHERE cid = @id ORDER BY id DESC");
+            cmd.Parameters.AddWithValue("@id", c.Id);
+            return DAO.GetDataTable(cmd);
+        }
+
         public static Product GetProduct(int id)
         {
             Product p = null;

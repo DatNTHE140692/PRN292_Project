@@ -11,5 +11,11 @@ namespace PRN292_Project
         {
 
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keywords = txtSearch.Text.Trim();
+            Response.Redirect("ShopGUI.aspx?keyword=" + keywords);
+        }
     }
 }

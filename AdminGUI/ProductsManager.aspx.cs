@@ -70,7 +70,35 @@ namespace PRN292_Project.AdminGUI
 
         protected void tblProducts_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            tblProducts.EditIndex = e.NewEditIndex;
+            int id = int.Parse(cbCategory.SelectedValue);
+            tblProducts_DataLoad(id);
+        }
 
+        protected void tblProducts_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            tblProducts.EditIndex = -1;
+            int id = int.Parse(cbCategory.SelectedValue);
+            tblProducts_DataLoad(id);
+        }
+
+        protected void tblProducts_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            int pid = int.Parse(tblProducts.DataKeys[e.RowIndex].Value.ToString());
+            string name = ((TextBox) tblProducts.Rows[e.RowIndex].FindControl("txtName")).Text.Trim();
+            float price = float.Parse(((TextBox) tblProducts.Rows[e.RowIndex].FindControl("txtPrice")).Text.Trim());
+            bool stock = ((CheckBox) tblProducts.Rows[e.RowIndex].FindControl("ckbStock")).Checked;
+            string thumbnail = ((TextBox) tblProducts.Rows[e.RowIndex].FindControl("txtThumbnail")).Text.Trim();
+            SqlCommand cmd = new SqlCommand("UPDATE dbo.Products SET name = @name, price = @price, inStock = @stock, thumbnail = @thumb WHERE id = @id");
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@price", price);
+            cmd.Parameters.AddWithValue("@stock", stock);
+            cmd.Parameters.AddWithValue("@thumb", thumbnail);
+            cmd.Parameters.AddWithValue("@id", pid);
+            DAO.UpdateTable(cmd);
+            tblProducts.EditIndex = -1;
+            int id = int.Parse(cbCategory.SelectedValue);
+            tblProducts_DataLoad(id);
         }
     }
 }

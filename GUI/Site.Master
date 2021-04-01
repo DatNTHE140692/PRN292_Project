@@ -35,29 +35,34 @@
                     <div class="collapse navbar-collapse" id="navbarToggler">
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li class="nav-item">
-                                <asp:HyperLink runat="server" CssClass="nav-link btn btn-light text-dark" NavigateUrl="~/GUI/HomeGUI.aspx">
+                                <asp:HyperLink runat="server" CssClass="btn btn-light text-dark" NavigateUrl="~/GUI/HomeGUI.aspx">
                                 <i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home
                                 </asp:HyperLink>
                             </li>
                             &nbsp;
                             <li class="nav-item">
-                                <asp:HyperLink runat="server" CssClass="nav-link btn btn-light text-dark" NavigateUrl="~/GUI/ShopGUI.aspx">
+                                <asp:HyperLink runat="server" CssClass="btn btn-light text-dark" NavigateUrl="~/GUI/ShopGUI.aspx">
                                     <i class="fa fa-shopping-basket"></i>&nbsp;Shop
                                 </asp:HyperLink>
                             </li>
                             &nbsp;
                             <li class="nav-item">
-                                <asp:HyperLink runat="server" CssClass="nav-link btn btn-light text-dark" NavigateUrl="~/GUI/ContactGUI.aspx">
+                                <asp:HyperLink runat="server" CssClass="btn btn-light text-dark" NavigateUrl="~/GUI/ContactGUI.aspx">
                                     <i class="fa fa-envelope"></i>&nbsp;Contact
                                 </asp:HyperLink>
                             </li>
                             &nbsp;
                             <li class="nav-item">
-                                <asp:HyperLink runat="server" CssClass="nav-link btn btn-light text-dark" NavigateUrl="~/GUI/AboutGUI.aspx">
+                                <asp:HyperLink runat="server" CssClass="btn btn-light text-dark" NavigateUrl="~/GUI/AboutGUI.aspx">
                                     <i class="fa fa-info-circle"></i>&nbsp;About Us
                                 </asp:HyperLink>
                             </li>
                         </ul>
+                        <div class="form-inline my-2 my-lg-0">
+                            <asp:TextBox runat="server" CssClass="form-control mr-sm-0" ID="txtSearch" ValidationGroup="search"></asp:TextBox>
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtSearch" SetFocusOnError="True" ValidationGroup="search"></asp:RequiredFieldValidator>
+                            <asp:Button runat="server" CssClass="btn btn-dark my-2 my-sm-0 mx-1" ID="btnSearch" Text="Search" ValidationGroup="search" OnClick="btnSearch_Click" CausesValidation="True"/>
+                        </div>
                         <%
                             List<Product> cart = Session["Cart"] as List<Product>;
                             if (cart.Count == 0)
