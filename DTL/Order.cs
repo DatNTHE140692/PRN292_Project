@@ -18,7 +18,9 @@ namespace PRN292_Project.DTL
         public string City { get; set; }
         public string Country { get; set; }
         public float Total { get; set; }
-        public bool IsAccept { get; set; }
+        public bool IsApproved { get; set; }
+        public bool IsProcessing { get; set; }
+        public bool IsCompleted { get; set; }
         public List<OrderDetail> OrderDetails = new List<OrderDetail>();
     }
 }

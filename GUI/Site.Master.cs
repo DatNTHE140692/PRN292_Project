@@ -7,8 +7,6 @@ namespace PRN292_Project
 {
     public partial class Site : System.Web.UI.MasterPage
     {
-        private List<Cart> cart;
-
         protected void Page_Load(object sender, EventArgs e)
         {
 

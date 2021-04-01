@@ -31,15 +31,17 @@ namespace PRN292_Project.AdminGUI
             {
                 cmd =
                     new SqlCommand(
-                        @"SELECT p.id [ID], p.name [Name], p.price [Price], p.inStock [Stock], pc.name [Category] " +
-                        "FROM dbo.Products p INNER JOIN dbo.Product_Categories pc ON pc.id = p.cid");
+                        @"SELECT p.id [ID], p.name [Name], p.price [Price], p.inStock [Stock], p.thumbnail [Thumbnail], pc.name [Category] " +
+                        "FROM dbo.Products p INNER JOIN dbo.Product_Categories pc ON pc.id = p.cid " +
+                        "ORDER BY p.id DESC");
             }
             else
             {
                 cmd =
                     new SqlCommand(
-                        @"SELECT p.id [ID], p.name [Name], p.price [Price], p.inStock [Stock], pc.name [Category] " +
-                        "FROM dbo.Products p INNER JOIN dbo.Product_Categories pc ON pc.id = p.cid WHERE pc.id = @id");
+                        @"SELECT p.id [ID], p.name [Name], p.price [Price], p.inStock [Stock], p.thumbnail [Thumbnail], pc.name [Category] " +
+                        "FROM dbo.Products p INNER JOIN dbo.Product_Categories pc ON pc.id = p.cid WHERE pc.id = @id " +
+                        "ORDER BY p.id DESC");
                 cmd.Parameters.AddWithValue("@id", id);
             }
             DataTable dt = DAO.GetDataTable(cmd);

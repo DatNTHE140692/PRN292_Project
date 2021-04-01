@@ -18,7 +18,10 @@ namespace PRN292_Project.DAL
 
         public static DataTable GeDataTable(Order o)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.OrderDetails WHERE oid = @id");
+            SqlCommand cmd = new SqlCommand(
+                @"SELECT od.id [ID], p.name [Product], p.price [Price], od.quantity [Quantity], s.name [Shipment] " +
+                "FROM dbo.OrderDetails od INNER JOIN dbo.Products p ON p.id = od.pid INNER JOIN dbo.Orders o ON o.id = od.oid INNER JOIN dbo.Shipment s ON s.id = o.shipid " +
+                "WHERE od.oid = @id");
             cmd.Parameters.AddWithValue("@id", o.ID);
             return DAO.GetDataTable(cmd);
         }
