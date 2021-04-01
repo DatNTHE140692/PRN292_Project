@@ -54,9 +54,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminGUI\AddProductGUI.aspx" />
     <Content Include="AdminGUI\AdminLoginGUI.aspx" />
     <Content Include="AdminGUI\BaseAuthentication.aspx" />
-    <Content Include="AdminGUI\BlogManager.aspx" />
     <Content Include="AdminGUI\ContactManager.aspx" />
     <Content Include="AdminGUI\DashboardGUI.aspx" />
     <Content Include="AdminGUI\CategoriesManager.aspx" />
@@ -100,6 +100,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminGUI\AddProductGUI.aspx.cs">
+      <DependentUpon>AddProductGUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\AddProductGUI.aspx.designer.cs">
+      <DependentUpon>AddProductGUI.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminGUI\AdminLoginGUI.aspx.cs">
       <DependentUpon>AdminLoginGUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -113,13 +120,6 @@
     </Compile>
     <Compile Include="AdminGUI\BaseAuthentication.aspx.designer.cs">
       <DependentUpon>BaseAuthentication.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminGUI\BlogManager.aspx.cs">
-      <DependentUpon>BlogManager.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminGUI\BlogManager.aspx.designer.cs">
-      <DependentUpon>BlogManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminGUI\ContactManager.aspx.cs">
       <DependentUpon>ContactManager.aspx</DependentUpon>

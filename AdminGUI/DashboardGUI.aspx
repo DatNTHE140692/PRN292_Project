@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container py-3">
         <div class="row">
-            <div class="col-md-3 col-sm-6 py-1">
+            <div class="col-sm-4 py-1">
                 <div class="card">
                     <asp:HyperLink runat="server" NavigateUrl="ProductsManager.aspx" CssClass="card-body">
                             <asp:Image runat="server" ImageUrl="../ASSETS/IMG/shops.svg" CssClass="w-100" />
@@ -16,7 +16,7 @@
                     </asp:HyperLink>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 py-1">
+            <div class="col-sm-4 py-1">
                 <div class="card">
                     <asp:HyperLink runat="server" NavigateUrl="OrdersManager.aspx" CssClass="card-body">
                         <asp:Image runat="server" ImageUrl="../ASSETS/IMG/checklist.svg" CssClass="w-100"/>
@@ -26,17 +26,7 @@
                     </asp:HyperLink>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 py-1">
-                <div class="card">
-                    <asp:HyperLink runat="server" NavigateUrl="" CssClass="card-body">
-                        <asp:Image runat="server" ImageUrl="../ASSETS/IMG/blog.svg" CssClass="w-100" />
-                    </asp:HyperLink>
-                    <asp:HyperLink runat="server" NavigateUrl="" CssClass="card-footer text-center" Font-Bold="True">
-                        Blog
-                    </asp:HyperLink>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 py-1">
+            <div class="col-sm-4 py-1">
                 <div class="card">
                     <asp:HyperLink runat="server" NavigateUrl="ContactManager.aspx" CssClass="card-body">
                         <asp:Image runat="server" ImageUrl="../ASSETS/IMG/inbox.svg" CssClass="w-100"/>

@@ -51,9 +51,8 @@ namespace PRN292_Project.AdminGUI
 
         protected void tblProducts_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            GridViewRow row = (GridViewRow) tblProducts.Rows[e.RowIndex];
             Product p = new Product();
-            p.Id = int.Parse(tblProducts.SelectedDataKey.Value.ToString());
+            p.Id = int.Parse(tblProducts.DataKeys[e.RowIndex].Value.ToString());
             if (ProductDAO.Delete(p))
             {
                 int id = int.Parse(cbCategory.SelectedValue);

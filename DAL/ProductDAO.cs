@@ -88,5 +88,45 @@ namespace PRN292_Project.DAL
             return DAO.UpdateTable(cmd);
         }
 
+        public static bool Insert(int id, string url)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO dbo.Product_Images( pid, imageUrl ) VALUES (@id, @url)");
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@url", url);
+            return DAO.UpdateTable(cmd);
+        }
+
+        public static bool Insert(Product p)
+        {
+            SqlCommand cmd =
+                new SqlCommand(
+                    @"INSERT INTO dbo.Products(name , price, overview, [description], inStock, cid, thumbnail) " +
+                    "VALUES (@name , @price, @overview, @description, @inStock, @cid, @thumbnail)");
+            cmd.Parameters.AddWithValue("@name", p.Name);
+            cmd.Parameters.AddWithValue("@price", p.Price);
+            cmd.Parameters.AddWithValue("@overview", p.Overview);
+            cmd.Parameters.AddWithValue("@description", p.Description);
+            cmd.Parameters.AddWithValue("@inStock", p.IsInStock);
+            cmd.Parameters.AddWithValue("@cid", p.Category.Id);
+            cmd.Parameters.AddWithValue("@thumbnail", p.Thumbnail);
+            return DAO.UpdateTable(cmd);
+        }
+
+        public static int GetMaxID()
+        {
+            SqlConnection conn = new SqlConnection(DAO.strConn);
+            SqlCommand cmd = new SqlCommand("SELECT MAX(id) id FROM dbo.Products", conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                if (reader.Read())
+                {
+                    return int.Parse(reader["id"].ToString());
+                }
+            }
+            conn.Close();
+            return -1;
+        }
     }
 }

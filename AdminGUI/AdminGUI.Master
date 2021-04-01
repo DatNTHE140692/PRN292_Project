@@ -35,10 +35,6 @@
                             </div>
                             &nbsp;
                             <li class="nav-item">
-                                <asp:HyperLink runat="server" CssClass="btn btn-light"><i class="fa fa-newspaper-o"></i>&nbsp;Blog</asp:HyperLink>
-                            </li>
-                            &nbsp;
-                            <li class="nav-item">
                                 <asp:HyperLink runat="server" CssClass="btn btn-light" NavigateUrl="ContactManager.aspx"><i class="fa fa-envelope"></i>&nbsp;Contact</asp:HyperLink>
                             </li>
                         </ul>
