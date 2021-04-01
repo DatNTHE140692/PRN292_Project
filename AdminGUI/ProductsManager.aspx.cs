@@ -72,5 +72,10 @@ namespace PRN292_Project.AdminGUI
         {
 
         }
+
+        protected void btnCreate_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddProductGUI.aspx");
+        }
     }
 }

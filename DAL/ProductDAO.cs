@@ -66,5 +66,55 @@ namespace PRN292_Project.DAL
             cmd.Parameters.AddWithValue("@id", p.Id);
             return DAO.UpdateTable(cmd);
         }
+        public static void Insert(Product c)
+        {
+            string sql = @"INSERT INTO [dbo].[Products]
+           ([name]
+           ,[price]
+           ,[overview]
+           ,[description]
+           ,[inStock]
+           ,[cid]
+           ,[thumbnail])
+     VALUES
+           (@name
+           ,@price
+           ,@overview
+           ,@description
+           ,@inStock
+           ,@cid
+           ,@thumbnail)";
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd.Parameters.AddWithValue("@name", c.Name);
+            cmd.Parameters.AddWithValue("@price", c.Price);
+            cmd.Parameters.AddWithValue("@overview", c.Overview);
+            cmd.Parameters.AddWithValue("@description", c.Description);
+            cmd.Parameters.AddWithValue("@inStock", c.IsInStock);
+            cmd.Parameters.AddWithValue("@cid", c.Category.Id);
+            cmd.Parameters.AddWithValue("@thumbnail", c.Thumbnail);
+            DAO.UpdateTable(cmd);
+            sql = @"DECLARE @param AS int
+            Select @param = id from (SELECT top 1 ROW_NUMBER() OVER (ORDER BY id DESC) as row_num , id
+		    FROM [PRN292_Project].[dbo].[Products]) t where row_num = 1
+            INSERT INTO [dbo].[Product_Images]
+           ([pid]
+           ,[imageUrl])
+            VALUES
+           (@param
+           ,@imgLink)";
+            foreach(var i in c.ImageUrls)
+            {
+                try
+                {
+                    SqlCommand cmd2 = new SqlCommand(sql);
+                    cmd2.Parameters.AddWithValue("@imgLink", i.ToString());
+                    DAO.UpdateTable(cmd2);
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine("Can not add image");
+                }
+            }
+        }
     }
 }

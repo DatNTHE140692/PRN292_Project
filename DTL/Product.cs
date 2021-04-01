@@ -11,13 +11,29 @@ namespace PRN292_Project.DTL
         private int id;
         private string name;
         private float price;
-        private Category category;
+        private Category category = new Category();
         private string overview;
         private string description;
         private bool isInStock;
         private ArrayList imageUrls = new ArrayList();
         private string thumbnail;
         private int quantity;
+
+        public Product()
+        {
+        }
+
+        public Product(string name, float price, Category category, string overview, string description, bool isInStock, ArrayList imageUrls, string thumbnail)
+        {
+            this.name = name;
+            this.price = price;
+            this.category.Id = category.Id;
+            this.overview = overview;
+            this.description = description;
+            this.isInStock = isInStock;
+            this.imageUrls = imageUrls;
+            this.thumbnail = thumbnail;
+        }
 
         public int Quantity
         {

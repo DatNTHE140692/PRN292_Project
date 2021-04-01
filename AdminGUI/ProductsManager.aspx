@@ -10,6 +10,7 @@
                 <asp:Label runat="server" Text="Category:"></asp:Label>&nbsp;
                 <asp:DropDownList ID="cbCategory" runat="server" AutoPostBack="True" DataSourceID="dsCategory" DataTextField="Name" DataValueField="ID" OnSelectedIndexChanged="cbCategory_SelectedIndexChanged"></asp:DropDownList>
                 <asp:ObjectDataSource runat="server" ID="dsCategory" SelectMethod="GetDataTableAll" TypeName="PRN292_Project.DAL.CategoryDAO"></asp:ObjectDataSource>
+                <asp:Button ID="btnCreate" runat="server" OnClick="btnCreate_Click" Text="Create" />
                 <br /><br />
                 <asp:GridView ID="tblProducts" runat="server" CssClass="w-100 table table-striped" CellPadding="0" EnableModelValidation="True" GridLines="None" PageSize="5" DataKeyNames="ID" AllowPaging="True" OnPageIndexChanging="tblProducts_PageIndexChanging" OnRowDeleting="tblProducts_RowDeleting" OnRowEditing="tblProducts_RowEditing" AutoGenerateColumns="False">
                     <Columns>
