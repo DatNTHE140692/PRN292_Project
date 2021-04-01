@@ -7,6 +7,23 @@ namespace PRN292_Project.DAL
 {
     public class OrderDAO
     {
+        public static int GetMaxID()
+        {
+            SqlConnection conn = new SqlConnection(DAO.strConn);
+            SqlCommand cmd = new SqlCommand("SELECT MAX(id) id FROM dbo.Orders", conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                if (reader.Read())
+                {
+                    return int.Parse(reader["id"].ToString());
+                }
+            }
+            conn.Close();
+            return -1;
+        }
+
         public static DataTable GetDataTable()
         {
             return DAO.GetDataTable(@"SELECT * FROM dbo.Orders ORDER BY id DESC");
@@ -31,22 +48,23 @@ namespace PRN292_Project.DAL
 
         public static bool Insert(Order o)
         {
-            string sql = @"INSERT INTO dbo.Orders(orderDate, firstName, lastName, email, phoneNumber, [address], province, city, country, total, isApproved, isProcessing, isCompleted) " +
-                         "VALUES (@d, @f, @l, @e, @p, @a, @province, @city, @country, @t, @isAccept)";
+            string sql = @"INSERT INTO dbo.Orders (orderDate, firstName, lastName, email, phoneNumber, [address], province, city, country, total, isApproved, isProcessing, isCompleted, shipid) " +
+                         "VALUES (@orderDate, @firstName, @lastName, @email, @phoneNumber, @address, @province, @city, @country, @total, @isApproved, @isProcessing, @isCompleted, @shipid)";
             SqlCommand cmd = new SqlCommand(sql);
-            cmd.Parameters.AddWithValue("@d", o.OrderDate);
-            cmd.Parameters.AddWithValue("@f", o.FirstName);
-            cmd.Parameters.AddWithValue("@l", o.LastName);
-            cmd.Parameters.AddWithValue("@e", o.Email);
-            cmd.Parameters.AddWithValue("@p", o.PhoneNumber);
-            cmd.Parameters.AddWithValue("@a", o.Address);
-            cmd.Parameters.AddWithValue("@province", o.Address);
+            cmd.Parameters.AddWithValue("@orderDate", o.OrderDate);
+            cmd.Parameters.AddWithValue("@firstName", o.FirstName);
+            cmd.Parameters.AddWithValue("@lastName", o.LastName);
+            cmd.Parameters.AddWithValue("@email", o.Email);
+            cmd.Parameters.AddWithValue("@phoneNumber", o.PhoneNumber);
+            cmd.Parameters.AddWithValue("@address", o.Address);
+            cmd.Parameters.AddWithValue("@province", o.Province);
             cmd.Parameters.AddWithValue("@city", o.City);
             cmd.Parameters.AddWithValue("@country", o.Country);
-            cmd.Parameters.AddWithValue("@t", o.Total);
+            cmd.Parameters.AddWithValue("@total", o.Total);
             cmd.Parameters.AddWithValue("@isApproved", false);
             cmd.Parameters.AddWithValue("@isProcessing", false);
             cmd.Parameters.AddWithValue("@isCompleted", false);
+            cmd.Parameters.AddWithValue("@shipid", o.Shipment.ID);
             return DAO.UpdateTable(cmd);
         }
     }

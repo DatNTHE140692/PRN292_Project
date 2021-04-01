@@ -37,18 +37,29 @@
                     <%
                         }
                     %>
-                    <tr>
-                        <td></td>
+                    <tr class="table-primary">
                         <td>Total:</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td>$<%= totalCart %></td>
                         <td></td>
                     </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink runat="server" CssClass="btn btn-primary" Text="Go Back" NavigateUrl="HomeGUI.aspx"></asp:HyperLink>
+                            <asp:HyperLink runat="server" CssClass="btn btn-success" Text="Check Out" NavigateUrl="CheckOutGUI.aspx"></asp:HyperLink>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-danger" Text="Clear Cart" OnClick="btnClear_Click"/>
+                        </td>
+                    </tr>
                 </table>
-                <br/>
-                <asp:HyperLink runat="server" CssClass="btn btn-primary" Text="Go Back" NavigateUrl="HomeGUI.aspx"></asp:HyperLink>
-                <asp:HyperLink runat="server" CssClass="btn btn-success" Text="Check Out" NavigateUrl="CheckOutGUI.aspx"></asp:HyperLink>
+                <br />
             </div>
         </div>
     </div>

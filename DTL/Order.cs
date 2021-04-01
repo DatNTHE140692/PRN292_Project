@@ -22,5 +22,6 @@ namespace PRN292_Project.DTL
         public bool IsProcessing { get; set; }
         public bool IsCompleted { get; set; }
         public List<OrderDetail> OrderDetails = new List<OrderDetail>();
+        public Shipment Shipment { get; set; }
     }
 }

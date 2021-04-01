@@ -66,5 +66,6 @@ namespace PRN292_Project.DAL
             cmd.Parameters.AddWithValue("@id", p.Id);
             return DAO.UpdateTable(cmd);
         }
+
     }
 }

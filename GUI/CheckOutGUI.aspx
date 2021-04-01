@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Site.Master" AutoEventWireup="true" CodeBehind="CheckOutGUI.aspx.cs" Inherits="PRN292_Project.GUI.CheckOutGUI" %>
+
 <%@ Import Namespace="System.Collections.Generic" %>
 <%@ Import Namespace="PRN292_Project.DTL" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -70,13 +71,13 @@
                         </div>
                         <div class="form-group">
                             <asp:Label runat="server" Text="Shipment:"></asp:Label>
-                            <asp:DropDownList runat="server" CssClass="form-control" ID="cbShipment" DataSourceID="dsShipment" DataTextField="name" DataValueField="id"/>
+                            <asp:DropDownList runat="server" CssClass="form-control" ID="cbShipment" DataSourceID="dsShipment" DataTextField="name" DataValueField="id" />
                             <asp:ObjectDataSource runat="server" ID="dsShipment" SelectMethod="GetDataTable" TypeName="PRN292_Project.DAL.ShipmentDAO"></asp:ObjectDataSource>
                         </div>
                     </div>
                     <div class="card-footer">
                         <asp:HyperLink runat="server" Text="Back To Cart" CssClass="btn btn-danger" NavigateUrl="CartGUI.aspx"></asp:HyperLink>
-                        <asp:Button runat="server" CssClass="btn btn-success" Text="Proceed" CausesValidation="True" ID="btnOrder" OnClick="btnOrder_Click"/>
+                        <asp:Button runat="server" CssClass="btn btn-success" Text="Proceed" CausesValidation="True" ID="btnOrder" OnClick="btnOrder_Click" />
                     </div>
                 </div>
             </div>
@@ -88,21 +89,21 @@
                         <th>Quantity</th>
                         <th>Total</th>
                     </tr>
-                    <tr>
                     <%
                         List<Product> Cart = Session["Cart"] as List<Product>;
                         float totalCart = float.Parse(Session["totalCart"].ToString());
                         foreach (Product p in Cart)
                         {
                     %>
+                    <tr>
                         <td><a href="ProductDetailGUI.aspx?id=<%= p.Id %>"><%= p.Name %></a></td>
                         <td>$<%= p.Price %></td>
                         <td><%= p.Quantity %></td>
                         <td>$<%= p.Quantity * p.Price %></td>
+                    </tr>
                     <%
                         }
                     %>
-                    </tr>
                     <tr>
                         <td>Total:</td>
                         <td></td>

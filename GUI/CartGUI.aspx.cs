@@ -30,5 +30,11 @@ namespace PRN292_Project.GUI
             }
             Session["totalCart"] = totalCart;
         }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            Session["Cart"] = new List<Product>();
+            Session["totalCart"] = 0;
+        }
     }
 }
