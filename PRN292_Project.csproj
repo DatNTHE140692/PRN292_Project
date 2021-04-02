@@ -60,6 +60,7 @@
     <Content Include="AdminGUI\ContactManager.aspx" />
     <Content Include="AdminGUI\DashboardGUI.aspx" />
     <Content Include="AdminGUI\CategoriesManager.aspx" />
+    <Content Include="AdminGUI\EditProductGUI.aspx" />
     <Content Include="AdminGUI\OrdersManager.aspx" />
     <Content Include="AdminGUI\ProductsManager.aspx" />
     <Content Include="ASSETS\IMG\blog.svg" />
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="AdminGUI\CategoriesManager.aspx.designer.cs">
       <DependentUpon>CategoriesManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\EditProductGUI.aspx.cs">
+      <DependentUpon>EditProductGUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\EditProductGUI.aspx.designer.cs">
+      <DependentUpon>EditProductGUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminGUI\OrdersManager.aspx.cs">
       <DependentUpon>OrdersManager.aspx</DependentUpon>

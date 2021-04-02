@@ -15,6 +15,7 @@ namespace PRN292_Project.AdminGUI
             {
                 tblProducts_DataLoad(-1);
             }
+            btnEdit.Enabled = false;
         }
 
         protected void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,6 +99,17 @@ namespace PRN292_Project.AdminGUI
             tblProducts.EditIndex = -1;
             int id = int.Parse(cbCategory.SelectedValue);
             tblProducts_DataLoad(id);
+        }
+
+        protected void tblProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnEdit.Enabled = true;
+        }
+
+        protected void btnEdit_OnClick(object sender, EventArgs e)
+        {
+            string id = tblProducts.SelectedDataKey.Value.ToString();
+            Response.Redirect("EditProductGUI.aspx?id=" + id);
         }
     }
 }

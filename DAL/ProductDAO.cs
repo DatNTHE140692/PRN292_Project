@@ -128,5 +128,28 @@ namespace PRN292_Project.DAL
             conn.Close();
             return -1;
         }
+
+        public static bool Update(Product p)
+        {
+            SqlCommand cmd = new SqlCommand(@"UPDATE dbo.Products " +
+                                            "SET name = @name, price = @price, overview = @overview, [description] = @description, inStock = @stock, cid = @category, thumbnail = @thumbnail " +
+                                            "WHERE id = @id");
+            cmd.Parameters.AddWithValue("@name", p.Name);
+            cmd.Parameters.AddWithValue("@price", p.Price);
+            cmd.Parameters.AddWithValue("@overview", p.Overview);
+            cmd.Parameters.AddWithValue("@description", p.Description);
+            cmd.Parameters.AddWithValue("@stock", p.IsInStock);
+            cmd.Parameters.AddWithValue("@category", p.Category.Id);
+            cmd.Parameters.AddWithValue("@thumbnail", p.Thumbnail);
+            cmd.Parameters.AddWithValue("@id", p.Id);
+            return DAO.UpdateTable(cmd);
+        }
+
+        public static bool Delete_Product_Images(int id)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM dbo.Product_Images WHERE pid = @id");
+            cmd.Parameters.AddWithValue("@id", id);
+            return DAO.UpdateTable(cmd);
+        }
     }
 }

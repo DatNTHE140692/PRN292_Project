@@ -11,7 +11,7 @@ namespace PRN292_Project.AdminGUI
 {
 
 
-    public partial class AddProductGUI
+    public partial class EditProductGUI
     {
 
         /// <summary>

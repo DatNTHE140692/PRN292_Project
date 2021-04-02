@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminGUI/AdminGUI.Master" AutoEventWireup="true" CodeBehind="AddProductGUI.aspx.cs" Inherits="PRN292_Project.AdminGUI.AddProductGUI" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminGUI/AdminGUI.Master" AutoEventWireup="true" CodeBehind="EditProductGUI.aspx.cs" Inherits="PRN292_Project.AdminGUI.EditProductGUI" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -67,7 +66,7 @@
                             <br />
                             <asp:FileUpload ID="ImageUploader3" runat="server" />
                             <br /><br />
-                            <asp:Button runat="server" CssClass="btn btn-success" ID="btnUpload" Text="Upload" OnClick="btnUpload_Click"/>
+                            <asp:Button runat="server" CssClass="btn btn-success" ID="btnUpload" Text="Upload" OnClick="btnUpload_Click" />
                         </div>
                     </div>
                     <div class="card-footer">
