@@ -46,7 +46,7 @@
                             </EditItemTemplate>  
                         </asp:TemplateField>  
                         <asp:BoundField HeaderText="Category" DataField="Category" ReadOnly="True" />
-                        <asp:TemplateField HeaderText="Price">  
+                        <asp:TemplateField HeaderText="Thumbnail">  
                             <ItemTemplate>     
                                 <%#Eval("Thumbnail")%>     
                             </ItemTemplate>  
