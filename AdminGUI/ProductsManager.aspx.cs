@@ -54,6 +54,7 @@ namespace PRN292_Project.AdminGUI
         {
             Product p = new Product();
             p.Id = int.Parse(tblProducts.DataKeys[e.RowIndex].Value.ToString());
+            ProductDAO.Delete_Product_Images(p.Id);
             if (ProductDAO.Delete(p))
             {
                 int id = int.Parse(cbCategory.SelectedValue);

@@ -52,10 +52,11 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <asp:Button runat="server" ID="btnSend" CssClass="btn btn-primary" Text="Send" CausesValidation="True" />
+                        <asp:Button runat="server" ID="btnSend" CssClass="btn btn-primary" Text="Send" CausesValidation="True" OnClick="btnSend_Click" />
                         <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger" Text="Cancel" CausesValidation="False" />
                     </div>
                 </div>
+                <asp:Label ID="lblSuccess" Visible="False" runat="server" Font-Bold="True" ForeColor="#ff0000"></asp:Label>
             </div>
         </div>
     </div>

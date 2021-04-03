@@ -13,14 +13,15 @@ namespace PRN292_Project.DAL
 
         public static bool Insert(Contact c)
         {
-            SqlCommand cmd = new SqlCommand(@"INSERT INTO dbo.Contact(firstName, lastName, email, phoneNumber, title, content) " +
-                                            "VALUES (@fname, @lname, @email, @phone, @title, @content)");
-            cmd.Parameters.AddWithValue("@fname", c.FirstName);
-            cmd.Parameters.AddWithValue("@lname", c.LastName);
+            SqlCommand cmd = new SqlCommand(@"INSERT INTO dbo.Contact(firstName,  lastName,  email,  phoneNumber,  title,  content,  isRead) " +
+                                            "VALUES (@firstName, @lastName, @email, @phoneNumber, @title, @content, @isRead)");
+            cmd.Parameters.AddWithValue("@firstName", c.FirstName);
+            cmd.Parameters.AddWithValue("@lastName", c.LastName);
             cmd.Parameters.AddWithValue("@email", c.Email);
-            cmd.Parameters.AddWithValue("@phone", c.PhoneNumber);
+            cmd.Parameters.AddWithValue("@phoneNumber", c.PhoneNumber);
             cmd.Parameters.AddWithValue("@title", c.Title);
             cmd.Parameters.AddWithValue("@content", c.Content);
+            cmd.Parameters.AddWithValue("@isRead", false);
             return DAO.UpdateTable(cmd);
         }
 
