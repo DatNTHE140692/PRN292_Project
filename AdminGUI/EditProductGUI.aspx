@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminGUI/AdminGUI.Master" AutoEventWireup="true" CodeBehind="EditProductGUI.aspx.cs" Inherits="PRN292_Project.AdminGUI.EditProductGUI" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminGUI/AdminGUI.Master" AutoEventWireup="true" CodeBehind="EditProductGUI.aspx.cs" Inherits="PRN292_Project.AdminGUI.EditProductGUI"  ValidateRequest="false"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -42,7 +42,7 @@
                         <div class="form-group">
                             <asp:Label runat="server" Text="Thumbnail:" Font-Bold="True"></asp:Label>
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="fuThumbnail" SetFocusOnError="True" ErrorMessage="*" ValidationGroup="thumb"></asp:RequiredFieldValidator>
-                            <asp:TextBox runat="server" ID="txtThumbnail" ReadOnly="True" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtThumbnail" ReadOnly="True" CssClass="form-control" ValidationGroup="thumb"></asp:TextBox>
                             <br/>
                             <asp:FileUpload ID="fuThumbnail" runat="server" />
                             <asp:Button runat="server" Text="Upload" CssClass="btn btn-success" CausesValidation="True" ValidationGroup="thumb" ID="btnThumbUpload" OnClick="btnThumbUpload_Click"/>
