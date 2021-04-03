@@ -19,6 +19,7 @@
                             <asp:Label runat="server" Text="Price:" Font-Bold="True"></asp:Label>
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txtPrice" ErrorMessage="*" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             <asp:TextBox runat="server" ID="txtPrice" CssClass="form-control"></asp:TextBox>
+                            <asp:RangeValidator runat="server" ErrorMessage="Price > 0" Type="Double" MinimumValue="0" SetFocusOnError="True" ControlToValidate="txtPrice"></asp:RangeValidator>
                         </div>
                         <div class="form-group">
                             <asp:Label runat="server" Text="Category:" Font-Bold="True"></asp:Label>

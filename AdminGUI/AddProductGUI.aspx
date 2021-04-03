@@ -20,6 +20,7 @@
                             <asp:Label runat="server" Text="Price:" Font-Bold="True"></asp:Label>
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txtPrice" ErrorMessage="*" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             <asp:TextBox runat="server" ID="txtPrice" CssClass="form-control"></asp:TextBox>
+                            <asp:RangeValidator runat="server" ErrorMessage="Price > 0" Type="Double" MinimumValue="0" SetFocusOnError="True" ControlToValidate="txtPrice"></asp:RangeValidator>
                         </div>
                         <div class="form-group">
                             <asp:Label runat="server" Text="Category:" Font-Bold="True"></asp:Label>
@@ -45,28 +46,28 @@
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="fuThumbnail" SetFocusOnError="True" ErrorMessage="*" ValidationGroup="thumb"></asp:RequiredFieldValidator>
                             <asp:TextBox runat="server" ID="txtThumbnail" ReadOnly="True" ValidationGroup="thumb" CssClass="form-control"></asp:TextBox>
                             <br/>
-                            <asp:FileUpload ID="fuThumbnail" runat="server" />
+                            <asp:FileUpload ID="fuThumbnail" runat="server"/>
                             <asp:Button runat="server" Text="Upload" CssClass="btn btn-success" CausesValidation="True" ValidationGroup="thumb" ID="btnThumbUpload" OnClick="btnThumbUpload_Click"/>
-                            <br />
+                            <br/>
                         </div>
                         <div class="form-group">
                             <asp:Label runat="server" Text="Slider Images:" Font-Bold="True"></asp:Label>
-                            <br /><br />
+                            <br/><br/>
                             <asp:Label runat="server" Text="Image 1:" Font-Bold="True"></asp:Label>
                             <asp:TextBox runat="server" ID="txtImage1" CssClass="form-control"></asp:TextBox>
                             <br/>
-                            <asp:FileUpload ID="ImageUploader1" runat="server" />
-                            <br /><br />
+                            <asp:FileUpload ID="ImageUploader1" runat="server"/>
+                            <br/><br/>
                             <asp:Label runat="server" Text="Image 2:" Font-Bold="True"></asp:Label>
                             <asp:TextBox runat="server" ID="txtImage2" CssClass="form-control"></asp:TextBox>
                             <br/>
-                            <asp:FileUpload ID="ImageUploader2" runat="server" />
-                            <br /><br />
+                            <asp:FileUpload ID="ImageUploader2" runat="server"/>
+                            <br/><br/>
                             <asp:Label runat="server" Text="Image 3:" Font-Bold="True"></asp:Label>
                             <asp:TextBox runat="server" ID="txtImage3" CssClass="form-control"></asp:TextBox>
-                            <br />
-                            <asp:FileUpload ID="ImageUploader3" runat="server" />
-                            <br /><br />
+                            <br/>
+                            <asp:FileUpload ID="ImageUploader3" runat="server"/>
+                            <br/><br/>
                             <asp:Button runat="server" CssClass="btn btn-success" ID="btnUpload" Text="Upload" OnClick="btnUpload_Click"/>
                         </div>
                     </div>
